@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Solitreo' rel='stylesheet'>\
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-panel card-panel-front">
+                <h1 class="title">Happy Valentines</h1>
+                <div class="heart"></div>
+                <h1>Day</h1>
+            </div>
+            <div class="card-panel card-panel-inside-left">
+            </div>
+            <div class="card-panel card-panel-inside-right">
+                <span>To My </span>
+                <p class="to">
+                </p>
+                <p class="my">
+                </p>
+                <span>Love from your </span>
+                <p class="from">
+                </p>
+                <span id="footer"> &#128151 &#128151 XXX &#128151 &#128151</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const openBtn = document.querySelector(".card-container");
+const to = document.querySelector(".to");
+const my = document.querySelector(".my");
+const from = document.querySelector(".from");
+
+
+const toArr = ["HI MARRIE KRIS!! happy valentines to you i jsut wanna say that you are so gorgeous person and Im so porud of you even though we are not very much close "];
+const myArr = [""];
+const fromArr = [""];
+
+let tooMsg = toArr[Math.floor(Math.random() * toArr.length)];
+let myMsg = myArr[Math.floor(Math.random() * myArr.length)];
+let fromMsg = fromArr[Math.floor(Math.random() * fromArr.length)];
+
+
+
+const generateCard = () => {
+    to.innerHTML = `<b> ${tooMsg}</b>`
+    my.innerHTML = `"You are so gorgeous <b>${myMsg}"</b>`
+    from.innerHTML = ` <br> <b>${fromMsg}</b>`
+}
+
+
+openBtn.onclick = function () {
+    document.body.classList.toggle("open");
+    generateCard();
+};
+    </script>
+</body>
+</html>
